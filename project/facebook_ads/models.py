@@ -18,4 +18,4 @@ class Link(models.Model):
 class Ad(models.Model):
     name = models.CharField(max_length=255)
     image = models.ForeignKey(Image, on_delete=models.CASCADE)
-    link_url = models.ForeignKey(Link, on_delete=models.CASCADE)
+    link = models.ForeignKey(Link, on_delete=models.CASCADE)
