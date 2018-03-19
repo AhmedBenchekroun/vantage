@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.test import TestCase
 from __future__ import unicode_literals
 from django.db import models
 
@@ -8,11 +9,11 @@ class Tag(models.Model):
 
 class Image(models.Model):
     url = models.CharField(max_length=255)
-    image_attribute = models.ForeignKey(Tag, on_delete=models.CASCADE, null=True)
+    attribute = models.ForeignKey(Tag, on_delete=models.CASCADE, null=True)
 
 class Link(models.Model):
     url = models.CharField(max_length=255)
-    link_attribute = models.ForeignKey(Tag, on_delete=models.CASCADE, null=True)
+    attribute = models.ForeignKey(Tag, on_delete=models.CASCADE, null=True)
 
 class Tag_Image(models.Model):
     image_id = models.ForeignKey(Image, on_delete=models.CASCADE)
